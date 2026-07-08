@@ -1,0 +1,12 @@
+# Force LF on everything by default — this repo's scripts run inside a Linux
+# container, where CRLF line endings break bash (\r treated as part of the
+# command). This prevents Windows/OneDrive from silently reintroducing CRLF.
+* text=auto eol=lf
+
+# Be explicit about the file types that must never get CRLF.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+Dockerfile text eol=lf
